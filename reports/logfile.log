@@ -60,3 +60,6 @@
 2025-03-10 17:55:14,332 : INFO : before_scenario :Assertion Passed: login was made successfully
 2025-03-10 17:55:19,730 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
 2025-03-10 17:55:27,834 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-03-10 18:25:03,453 : INFO : before_scenario :Assertion Passed: login was made successfully
+2025-03-10 18:25:10,907 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-03-10 18:25:22,225 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
