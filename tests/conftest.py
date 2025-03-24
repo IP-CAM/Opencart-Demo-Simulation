@@ -3,8 +3,7 @@ import time
 
 import pytest
 import logging
-#from selenium import webdriver
-import undetected_chromedriver as webdriver
+from selenium import webdriver
 from pytest_html import extras  # Import pytest_html extras
 import logging
 from selenium.common.exceptions import SessionNotCreatedException
@@ -17,7 +16,7 @@ def pytest_addoption(parser):
         help="Choose browser: chrome, firefox, or edge"
     )
     parser.addoption(
-        "--url", action="store", default="https://demo.opencart.com/",
+        "--url", action="store", default="http://localhost/opencart/",
         help="Specify the base URL for testing"
     )
 
@@ -39,23 +38,9 @@ def setup(request):
     try:
         if browser_name == "chrome":
             options = webdriver.ChromeOptions()
-             # Open chrome with user logged in to skip recaptcha
-            user_data_dir = r"C:\Users\caioa\AppData\Local\Google\Chrome\User Data"
-            profile_dir = "Default"
-
-            options.add_argument(f"--user-data-dir={user_data_dir}")
-            options.add_argument(f"--profile-directory={profile_dir}")
-            
-            # Allow debugging port for remote debugging
-            options.add_argument("--remote-debugging-port=9222")
-
-            # Avoid crash issues
-            options.add_argument("--disable-blink-features=AutomationControlled")
-            options.add_argument("--disable-infobars")
             # options.add_argument("--headless")  # Run Chrome in headless mode (doesn't open browser)
-            # options.add_argument("--disable-gpu")  # Recommended for headless mode on Windows
-            driver = webdriver.Chrome(options=options,
-                                      version_main=133)  # version 133 refers to chrome's version. Fix for incompatibility
+            #options.add_argument("--disable-gpu")  # Recommended for headless mode on Windows
+            driver = webdriver.Chrome(options=options)
         elif browser_name == "firefox":
             options = webdriver.FirefoxOptions()
             driver = webdriver.Firefox(options=options)
@@ -63,11 +48,7 @@ def setup(request):
             options = webdriver.EdgeOptions()
             driver = webdriver.Edge(options=options)
 
-        driver.implicitly_wait(
-            4)  # It tells Selenium to wait up to 4 seconds for an element to appear before throwing an exception (e.g., NoSuchElementException). It applies to all find_element or find_elements calls
-
-        time.sleep(7)  # fix for helping pass the humanity test
-
+        driver.implicitly_wait(4)  # It tells Selenium to wait up to 4 seconds for an element to appear before throwing an exception (e.g., NoSuchElementException). It applies to all find_element or find_elements calls
         driver.set_window_size(width, height)
         driver.get(url)
         request.cls.driver = driver

@@ -63,3 +63,29 @@
 2025-03-10 18:25:03,453 : INFO : before_scenario :Assertion Passed: login was made successfully
 2025-03-10 18:25:10,907 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
 2025-03-10 18:25:22,225 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-03-13 21:56:51,726 : INFO : step_impl :Collected product names: ['Sony VAIO']
+2025-03-13 21:56:52,571 : INFO : step_impl :Collected product names: ['Sony VAIO', 'Nikon D300']
+2025-03-17 20:52:05,413 : INFO : step_impl :Collected product names: ['Sony VAIO']
+2025-03-17 20:52:06,206 : INFO : step_impl :Collected product names: ['Sony VAIO', 'Nikon D300']
+2025-03-17 20:56:40,007 : INFO : step_impl :Collected product names: ['Sony VAIO']
+2025-03-17 20:56:40,738 : INFO : step_impl :Collected product names: ['Sony VAIO', 'Nikon D300']
+2025-03-21 16:46:41,110 : INFO : test_1_enter_valid_product_name :Assertion Passed: the displayed products match with the expected products.
+2025-03-21 16:47:27,845 : ERROR : test_1_enter_valid_product_name :Assertion Failed! the displayed products don't match with the expected products. Error: Assertion Failed! the displayed products don't match with the expected products.
+assert {'{"name": "iPod Touch", "price": "$122.00"}', '{"name": "iPod Shuffl2e", "price": "$122.00"}', '{"name": "iPod Nano", "price": "$122.00"}', '{"name": "iPod Classic", "price": "$122.00"}'} == {'{"name": "iPod Shuffle", "price": "$122.00"}', '{"name": "iPod Touch", "price": "$122.00"}', '{"name": "iPod Nano", "price": "$122.00"}', '{"name": "iPod Classic", "price": "$122.00"}'}
+  
+  Extra items in the left set:
+  '{"name": "iPod Shuffl2e", "price": "$122.00"}'
+  Extra items in the right set:
+  '{"name": "iPod Shuffle", "price": "$122.00"}'
+  
+  Full diff:
+    {
+        '{"name": "iPod Classic", "price": "$122.00"}',
+        '{"name": "iPod Nano", "price": "$122.00"}',
+  -     '{"name": "iPod Shuffle", "price": "$122.00"}',
+  +     '{"name": "iPod Shuffl2e", "price": "$122.00"}',
+  ?                           +
+        '{"name": "iPod Touch", "price": "$122.00"}',
+    }
+2025-03-24 10:26:03,427 : INFO : test_1_enter_valid_product_name :Assertion Passed: the displayed products match with the expected products.
+2025-03-24 10:37:26,839 : INFO : test_1_enter_valid_product_name :Assertion Passed: the displayed products match with the expected products.
