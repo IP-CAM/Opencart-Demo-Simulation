@@ -1,4 +1,4 @@
-from selenium.common import NoSuchElementException
+from selenium.common import NoSuchElementException, TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
@@ -12,20 +12,19 @@ class LoginPage(BaseClass):
         self.driver = driver
         self.wait = WebDriverWait(self.driver, 10)
 
-    account_menu = (By.CSS_SELECTOR, ".nav.float-end a[class*='dropdown-toggle']")
+    account_menu = (By.CSS_SELECTOR, "#top .text-end .dropdown .dropdown-toggle")
     login_button = (By.XPATH, "//a[normalize-space()='Login']")
     logout_button = (By.XPATH, "//a[normalize-space()='Logout']")
     email = (By.ID, "input-email")
     password = (By.ID, "input-password")
     submit_button = (By.XPATH, "//button[normalize-space()='Login']")
-    login_error = (By.XPATH, "//dirv[@class='alert alert-danger alert-dismissible']")
+    login_error = (By.XPATH, "//div[@class='alert alert-danger alert-dismissible']")
 
     def open_menu_myaccount(self):
-        return self.driver.find_element(*LoginPage.account_menu).click()
+        self.safe_click(LoginPage.account_menu)
 
     def open_login_page(self):
-        wait = WebDriverWait(self.driver, 10)  # Wait up to 10 seconds
-        login_button = wait.until(
+        login_button = self.wait.until(
             expected_conditions.element_to_be_clickable((By.XPATH, "//a[normalize-space()='Login']"))
         )
         return login_button.click()
@@ -43,10 +42,13 @@ class LoginPage(BaseClass):
         return self.driver.find_element(*LoginPage.password)
 
     def click_submit(self):
-        return self.driver.find_element(*LoginPage.submit_button).click()
+        self.safe_click(LoginPage.submit_button)
 
     def get_login_error(self):
-        return self.driver.find_element(*LoginPage.login_error).text
+        try:
+            return self.wait.until(expected_conditions.visibility_of_element_located(LoginPage.login_error)).text
+        except TimeoutException:
+            return None
 
     def get_logout_button(self):
         return self.driver.find_element(*LoginPage.logout_button)

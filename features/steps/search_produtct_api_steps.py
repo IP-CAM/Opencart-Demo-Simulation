@@ -18,10 +18,6 @@ def step_impl(context):
     context.status = context.response.status_code
     #print(context.status)
     assert context.status == 200, f"Not expected response: {context.status}"
-    #print(context.response.json())
-    #print("Status Code:", context.status)
-    #print("Response Body:", context.response.text)
-    #print("Response Headers:", context.response.headers)
 
 
 @then('the response should contain the correct product details') #this step is running twice because of the two product examples in the scenario

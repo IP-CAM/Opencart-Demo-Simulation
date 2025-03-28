@@ -9,19 +9,30 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.by import By
 
-#This class is used to hold all the common utilities, like reusable functions that need to be available for several teste cases
+#This class is used to hold all the common utilities, like reusable functions that need to be available for several test cases
 
 @pytest.mark.usefixtures("setup")
 class BaseClass:
 
+    def safe_click(self, locator):
+        try:
+            wait = WebDriverWait(self.driver, 10)
+            element = wait.until(expected_conditions.element_to_be_clickable(locator))
+            element.click()
+        except Exception:
+            self.driver.execute_script("arguments[0].click();", element)
 
     def is_mobile_view(self):
         #Check if the current window size is mobile (width ≤ 768px)."""
         width = self.driver.get_window_size()["width"]
         return width <= 768
 
+    def convert_price_to_float(self,price_str):
+        return float(price_str.replace(",", "").replace("$", "").strip())
+
     def verify_link_presence(self, text):
-        element = WebDriverWait(self.driver, 10).until(expected_conditions.presence_of_element_located((By.LINK_TEXT, text)))
+        wait = WebDriverWait(self.driver, 10)
+        element = wait.until(expected_conditions.presence_of_element_located((By.LINK_TEXT, text)))
 
     # def selectOptionByText(self, locator, text):
     #     dropdown = Select(locator)

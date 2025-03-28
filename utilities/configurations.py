@@ -1,25 +1,65 @@
+#Static settings and environment variables.
+
 import configparser
 import requests
 import inspect
 import logging
 import os
 
+import mysql.connector 
+from mysql.connector import Error
+
+
 
 def getConfig():
     config = configparser.ConfigParser()
-    config.read('OpenCartDemoSimulation/utilities/properties.ini')
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    config_file = os.path.join(base_dir, "properties.ini")
+    config.read(config_file)
     return config
 
 def get_headers():
     return {
         "X-Oc-Merchant-Id": "123", 
         "Accept": "application/json", 
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36",  "Connection": "keep-alive"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36",  
+        "Connection": "keep-alive",
+        "X-Oc-Session": "80f1194132d731c4bc97ecf8a2"
     }
 
 def send_get_request(url, headers):
     response = requests.get(url, headers=headers)
     return response
+
+def send_post_request(url, headers, json_body ):
+    response = requests.post(url, headers=headers, json=json_body)
+    return response
+
+connect_config = {
+    'user' : getConfig()['SQL']['user'],
+    'database' : getConfig()['SQL']['database'],
+    'password' : getConfig()['SQL']['password'],
+    'host' : getConfig()['SQL']['host'],
+}
+
+def getConnection():
+    try: #we use try because if connection fails we need to know the error
+        conn = mysql.connector.connect(**connect_config) #the ** tell it's nothing but a dicitonary
+        if conn.is_connected():
+            print("Connection successful")
+            return conn
+    except Error as e:
+        print(e)
+
+def getQuery(query):
+    conn = getConnection()
+    #cursor executes statements to communicate with the MySQL database
+    cursor = conn.cursor()
+    cursor.execute(query)
+    rows = cursor.fetchall()
+    conn.close()
+    return rows
+
 
 def getLogger():
         #this log will also generate a screenshot of the tests that failed because of the method to capture screen in conftest.py

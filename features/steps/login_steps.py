@@ -16,7 +16,7 @@ def step_impl(context):
 @when('I enter valid username and password in the login form')
 def step_impl(context):
     email = "caioaza@gmail.com"
-    password = "1234"    
+    password = "123456"    
     context.login_page.enter_credentials(email, password)
 
 
@@ -37,12 +37,12 @@ def step_impl(context):
 
 @when('I enter invalid username and password in the login form')
 def step_impl(context):
-    email = "fgsdf@gmail.com"
-    password = "sdfgsfdg"
+    email = "fgtt45sdf@gmail.com"
+    password = "s456dfgsfdg"
     context.login_page.enter_credentials(email, password)
 
 
 @then('I should see an error message saying "Warning: No match for E-Mail Address and/or Password."')
 def step_impl(context):
-    assert "Warning: No match for E-Mail Address and/or Password." in context.login_page.get_login_error(), "Invalid login error message was displayed."
+    assert "Warning: No match for E-Mail Address and/or Password." in context.login_page.get_login_error()
     context.logger.info("Assertion Passed: Invalid login error message was displayed.")

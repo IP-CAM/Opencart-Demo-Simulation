@@ -27,7 +27,7 @@ class TestLogin(BaseClass):
         #TC 1 Test for valid username and password
         logger = self.getLogger()
         email = "caioaza@gmail.com"
-        password = "1234"
+        password = "123456"
         #time.sleep(5) #this sleep time helps to validate the verify human blockage
         try:
             self.login(email, password)
@@ -46,12 +46,11 @@ class TestLogin(BaseClass):
     def test_2_enter_invalid_credentials(self):
         #TC 2 Test for invalid username and password
         logger = self.getLogger()
-        email = "fgsdf@gmail.com"
-        password = "sdfgsfdg"
+        email = "fgsd67456f@gmail.com"
+        password = "sd57fgsfdg"
         #time.sleep(5) #this sleep time helps to validate the verify human blockage
         try:
             self.login(email, password)
-            time.sleep(2)
             login_page = LoginPage(self.driver)
             logger.info("Logging in with invalid credentials. E-mail: %s / Password: %s", email, password)
             assert "Warning: No match for E-Mail Address and/or Password." in login_page.get_login_error(), "Invalid login error message was displayed."
@@ -64,7 +63,6 @@ class TestLogin(BaseClass):
     def test_3_empty_credentials(self):
         #TC 3 Test for empty username and password
         logger = self.getLogger()
-        time.sleep(5) #this sleep time helps to validate the verify human blockage
         try:
             login_page = LoginPage(self.driver)
             login_page.open_menu_myaccount()
@@ -73,7 +71,6 @@ class TestLogin(BaseClass):
                 login_page.open_menu_myaccount()
             login_page.open_login_page()
             login_page.click_submit()
-            time.sleep(2)
             logger.info("Logging in with empty credentials.")
             assert "Warning: No match for E-Mail Address and/or Password." in login_page.get_login_error(), "Invalid login error message was displayed."
             logger.info("Assertion Passed: Invalid login error message was displayed.")
