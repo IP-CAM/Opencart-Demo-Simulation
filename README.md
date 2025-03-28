@@ -4,7 +4,7 @@ This is a comprehensive end-to-end QA Automation project developed using Python 
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 This project simulates how a QA Automation Engineer would work in an Agile team, covering:
 
@@ -18,7 +18,7 @@ This project simulates how a QA Automation Engineer would work in an Agile team,
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
 | Area        | Tools/Libraries                       |
 | ----------- | ------------------------------------- |
@@ -32,7 +32,7 @@ This project simulates how a QA Automation Engineer would work in an Agile team,
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```
 OpenCartDemoSimulation/
@@ -78,15 +78,15 @@ OpenCartDemoSimulation/
 
 ---
 
-## 🧪 Running Tests
+## Running Tests
 
-### ✅ Run All UI Tests (Pytest)
+### Run All UI Tests (Pytest)
 
 ```bash
 pytest OpenCartDemoSimulation/tests/
 ```
 
-### ✅ Run Only One Specific Test
+### Run Only One Specific Test
 
 ```bash
 pytest OpenCartDemoSimulation/tests/test_cart.py::TestCart::test_1_verify_items_data
@@ -94,30 +94,30 @@ pytest OpenCartDemoSimulation/tests/test_cart.py::TestCart::test_1_verify_items_
 
 ---
 
-## 🌐 API Testing
+## API Testing
 
-### ▶️ Run API Tests via Pytest
+### Run API Tests via Pytest
 
 ```bash
 pytest OpenCartDemoSimulation/tests/test_cart_api.py
 ```
 
-### 📫 API Test Using DB-Driven Payload
+### API Test Using DB-Driven Payload
 
 - Pulls product IDs from local MySQL to build dynamic payload
 - Sends POST requests to the OpenCart Bulk Cart API
 
 ---
 
-## 🧪 BDD Testing with Behave
+## BDD Testing with Behave
 
-### ▶️ Run All Scenarios
+### Run All Scenarios
 
 ```bash
 behave OpenCartDemoSimulation/features/
 ```
 
-### ▶️ Tag Specific Scenarios (UI or API)
+### Tag Specific Scenarios (UI or API)
 
 ```bash
 behave -t @browser
@@ -126,7 +126,7 @@ behave -t @api
 
 ---
 
-## 🔐 Credentials & Config
+## Credentials & Config
 
 Sensitive data like DB credentials, API keys, and URLs are managed via:
 
@@ -137,13 +137,13 @@ Make sure these are updated before running tests.
 
 ---
 
-## 📋 Notable Features
+## Notable Features
 
-- 📦 Page Object Model for test stability
-- 🐞 Handles stale elements & dynamic waits
-- 🔁 Clean test-data teardown (cart cleanup logic)
-- ✅ Assertion messages for clear failures
-- 🧪 Tests cover:
+-  Page Object Model for test stability
+-  Handles stale elements & dynamic waits
+-  Clean test-data teardown (cart cleanup logic)
+-  Assertion messages for clear failures
+-  Tests cover:
   - Product search & filtering
   - Add to cart & quantity updates
   - Price validation
@@ -153,7 +153,7 @@ Make sure these are updated before running tests.
 
 ---
 
-## 🙋‍♂️ About Me
+##  About Me
 
 I'm a QA Automation Engineer focused on **real-world testing scenarios**, clean architecture, and continuously learning modern testing tools. This project is my way to demonstrate what I can bring to your QA team — from code quality to test coverage to project structure.
 
