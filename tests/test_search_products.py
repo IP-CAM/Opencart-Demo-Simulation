@@ -70,6 +70,7 @@ class TestSearchProducts(BaseClass):
         logger.info("Assertion Passed: error message %s was displayed.")
 
     def test_3_verify_category_menu(self):
+        # TC 3 - Verify if the category page is showing the right products
         logger = self.getLogger()
         expected_products = [
             {
