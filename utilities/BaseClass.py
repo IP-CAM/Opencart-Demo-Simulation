@@ -15,6 +15,8 @@ from selenium.webdriver.common.by import By
 class BaseClass:
 
     def safe_click(self, locator):
+        # This function Uses the click with javascript because the regular click is returning an error “element click intercepted” meaning that while Selenium found the button, something (like an overlay, modal, or even the page not being scrolled properly) is preventing the click from being executed normally
+        # If normal click fails, use JavaScript to click the element
         try:
             wait = WebDriverWait(self.driver, 10)
             element = wait.until(expected_conditions.element_to_be_clickable(locator))

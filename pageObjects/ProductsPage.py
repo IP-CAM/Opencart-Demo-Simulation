@@ -28,9 +28,6 @@ class ProductsPage(BaseClass):
         return self.driver.find_element(*ProductsPage.search_product_button).click()
 
     def get_products(self):
-        # wait = WebDriverWait(self.driver, 10)  # Wait up to 10 seconds
-        # products_list = wait.until(expected_conditions.element_to_be_clickable(*ProductsPage.products))
-        # return products_list
         return self.driver.find_elements(*ProductsPage.products)
 
     def get_product_name(self, product):
@@ -70,13 +67,10 @@ class ProductsPage(BaseClass):
             # Using the click with javascript here because the regular click is returning an error “element click intercepted” meaning that while Selenium found the button, something (like an overlay, modal, or even the page not being scrolled properly) is preventing the click from being executed normally
             # If normal click fails, use JavaScript to click the element
             self.driver.execute_script("arguments[0].click();", add_to_cart_button)
+        #self.safe_click(ProductsPage.product_add_to_cart)
 
     def click_cart_button(self):
-        wait = WebDriverWait(self.driver, 10)
-        cart_button_element = wait.until(EC.element_to_be_clickable(ProductsPage.cart_button))
-        # Scroll the button into view so that it is clickable
-        self.driver.execute_script("arguments[0].scrollIntoView(true);", cart_button_element)
-        cart_button_element.click()
+        self.safe_click(ProductsPage.cart_button)
 
     def add_products_to_the_cart(self,products_to_add):
         product = "ipod"
