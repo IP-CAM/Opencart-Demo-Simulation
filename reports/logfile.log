@@ -315,3 +315,6 @@ assert <selenium.webdriver.remote.webelement.WebElement (session="aa69c5d8e8434c
 2025-03-31 16:11:12,909 : INFO : test_3_checkout_empty_cart_button :Assertion Passed: Checkout button is not present when cart is empty
 2025-03-31 16:11:27,537 : INFO : test_4_remove_product :Assertion Passed: Products are being correctly removed.
 2025-03-31 16:13:39,848 : INFO : test_1_verify_items_data :Assertion Passed: the products added to the cart match with the products in the cart.
+2025-03-31 16:18:36,225 : INFO : test_1_verify_items_data :Assertion Passed: the products added to the cart match with the products in the cart.
+2025-03-31 16:19:10,627 : INFO : test_3_checkout_empty_cart_button :Assertion Passed: Checkout button is not present when cart is empty
+2025-03-31 16:19:25,893 : INFO : test_4_remove_product :Assertion Passed: Products are being correctly removed.
