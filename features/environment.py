@@ -1,3 +1,11 @@
+import sys
+import os
+
+# Make sure we always add the actual project root to sys.path
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
+
 from selenium import webdriver
 from OpenCartDemoSimulation.pageObjects.LoginPage import LoginPage
 import time
