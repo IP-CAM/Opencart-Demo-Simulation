@@ -112,19 +112,22 @@ behave OpenCartDemoSimulation/features -t "@search_products_api"
 
 ## BDD Testing with Behave
 
-### Run All Scenarios (Run from one level above the OpenCartDemoSimulation/ directory)
+### Run All Scenarios
+(Run from one level above the OpenCartDemoSimulation/ directory)
 
 ```bash
 behave OpenCartDemoSimulation/features/
 ```
 
-### Run Specific UI Scenario (Run from one level above the OpenCartDemoSimulation/ directory)
+### Run Specific UI Scenario
+(Run from one level above the OpenCartDemoSimulation/ directory)
 
 ```bash
 behave OpenCartDemoSimulation/features -t "@browser"
 ```
 
-### Generate the Allure Report and open in Browser (Run from one level above the OpenCartDemoSimulation/ directory)
+### Generate the Allure Report and open in Browser
+(Run from one level above the OpenCartDemoSimulation/ directory)
 
 ```bash
 allure generate OpenCartDemoSimulation/reports/allure-results -o OpenCartDemoSimulation/reports/allure-report --clean
@@ -153,7 +156,7 @@ Make sure these are updated before running tests.
 - Assertion messages for clear failures
 - Allure Report
 - Pytest HTML Report
-  Tests cover:
+- **Tests cover:**
 - Product search & filtering
 - Add to cart & quantity updates
 - Price validation
