@@ -130,8 +130,13 @@ behave OpenCartDemoSimulation/features -t "@browser"
 (Run from one level above the OpenCartDemoSimulation/ directory)
 
 ```bash
+# 1. Run tests (example with Behave)
+behave OpenCartDemoSimulation/features -f allure_behave.formatter:AllureFormatter -o OpenCartDemoSimulation/reports/allure-results
+
+# 2. Generate Allure Report
 allure generate OpenCartDemoSimulation/reports/allure-results -o OpenCartDemoSimulation/reports/allure-report --clean
 
+# 3. Open report
 allure open OpenCartDemoSimulation/reports/allure-report
 ```
 
