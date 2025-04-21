@@ -318,3 +318,71 @@ assert <selenium.webdriver.remote.webelement.WebElement (session="aa69c5d8e8434c
 2025-03-31 16:18:36,225 : INFO : test_1_verify_items_data :Assertion Passed: the products added to the cart match with the products in the cart.
 2025-03-31 16:19:10,627 : INFO : test_3_checkout_empty_cart_button :Assertion Passed: Checkout button is not present when cart is empty
 2025-03-31 16:19:25,893 : INFO : test_4_remove_product :Assertion Passed: Products are being correctly removed.
+2025-04-18 13:40:21,900 : INFO : step_impl :Collected product names: ['Sony VAIO']
+2025-04-18 13:40:22,509 : INFO : step_impl :Collected product names: ['Sony VAIO', 'Nikon D300']
+2025-04-18 13:40:45,417 : INFO : step_impl :Collected product names: ['Sony VAIO']
+2025-04-18 13:40:45,981 : INFO : step_impl :Collected product names: ['Sony VAIO', 'Nikon D300']
+2025-04-18 13:41:24,921 : INFO : step_impl :Collected product names: ['Sony VAIO']
+2025-04-18 13:41:25,543 : INFO : step_impl :Collected product names: ['Sony VAIO', 'Nikon D300']
+2025-04-18 13:59:17,733 : INFO : step_impl :Collected product names: ['Sony VAIO']
+2025-04-18 13:59:18,249 : INFO : step_impl :Collected product names: ['Sony VAIO', 'Nikon D300']
+2025-04-18 14:50:27,801 : INFO : before_scenario :Assertion Passed: login was made successfully
+2025-04-18 14:51:59,265 : INFO : before_scenario :Assertion Passed: login was made successfully
+2025-04-18 14:52:06,765 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-18 14:52:14,137 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-18 14:52:21,416 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-18 14:55:32,320 : INFO : before_scenario :Assertion Passed: login was made successfully
+2025-04-18 14:55:39,887 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-18 14:55:47,381 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-18 14:55:54,760 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-18 17:31:37,562 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-18 17:31:44,045 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-18 17:31:49,891 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-18 17:31:55,578 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-18 17:32:01,346 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-18 17:33:51,754 : INFO : before_scenario :Assertion Passed: login was made successfully
+2025-04-18 17:33:57,762 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-18 17:34:03,535 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-18 17:34:09,303 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-18 17:34:21,452 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-18 17:48:15,435 : INFO : before_scenario :Assertion Passed: login was made successfully
+2025-04-18 17:48:21,055 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-18 17:48:26,918 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-18 17:48:32,519 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-18 17:48:43,705 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-19 12:02:41,046 : INFO : step_impl :Collected product names: ['Sony VAIO']
+2025-04-19 12:02:41,695 : INFO : step_impl :Collected product names: ['Sony VAIO', 'Nikon D300']
+2025-04-19 12:04:30,671 : INFO : before_scenario :Assertion Passed: login was made successfully
+2025-04-19 12:04:35,986 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-19 12:04:41,305 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-19 12:04:46,642 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-19 12:04:51,879 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-19 12:04:57,182 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-19 12:05:05,843 : INFO : step_impl :Collected product names: ['Sony VAIO']
+2025-04-19 12:05:06,475 : INFO : step_impl :Collected product names: ['Sony VAIO', 'Nikon D300']
+2025-04-19 12:07:02,487 : INFO : before_scenario :Assertion Passed: login was made successfully
+2025-04-19 12:07:13,186 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-19 12:07:29,457 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-19 12:07:37,712 : INFO : step_impl :Collected product names: ['Sony VAIO']
+2025-04-19 12:07:38,341 : INFO : step_impl :Collected product names: ['Sony VAIO', 'Nikon D300']
+2025-04-19 12:16:51,866 : INFO : before_scenario :Assertion Passed: login was made successfully
+2025-04-19 12:17:02,338 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-19 12:17:17,872 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-19 13:38:39,228 : INFO : before_scenario :Assertion Passed: login was made successfully
+2025-04-19 13:38:44,300 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-19 13:38:49,397 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-19 13:38:59,324 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-19 13:39:04,218 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-19 13:39:09,231 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-19 13:39:12,273 : INFO : step_impl :Collected product names: ['Sony VAIO']
+2025-04-19 13:39:12,924 : INFO : step_impl :Collected product names: ['Sony VAIO', 'Nikon D300']
+2025-04-21 13:57:48,684 : INFO : step_impl :Collected product names: ['Sony VAIO']
+2025-04-21 13:57:49,364 : INFO : step_impl :Collected product names: ['Sony VAIO', 'Nikon D300']
+2025-04-21 14:00:04,461 : INFO : before_scenario :Assertion Passed: login was made successfully
+2025-04-21 14:00:11,815 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-21 14:00:18,730 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-21 14:00:33,083 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-21 14:00:40,084 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-21 14:00:47,182 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
+2025-04-21 14:00:50,171 : INFO : step_impl :Collected product names: ['Sony VAIO']
+2025-04-21 14:00:50,846 : INFO : step_impl :Collected product names: ['Sony VAIO', 'Nikon D300']

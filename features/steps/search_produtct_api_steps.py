@@ -7,6 +7,11 @@ from OpenCartDemoSimulation.utilities.resources import ApiResources
 def step_impl(context,product):
     context.url = getConfig()['API']['endpoint']+ApiResources.search_product+product    
     context.headers = get_headers()
+    
+@given('I have a valid API endpoint and empty keyword for product search')
+def step_impl(context):
+    context.url = getConfig()['API']['endpoint']+ApiResources.search_product    
+    context.headers = get_headers()
 
 @when('I send a request to the product search API')
 def step_impl(context):
@@ -38,3 +43,10 @@ def step_impl(context):
     if len(set(context.products_name)) == len(expected_products): #set() transforms the list into a set, allowing then a comparation not taking into consideration the order, or repeated values. Safer than comparing two lists 
         assert set(context.products_name) == expected_products, \
             f"Expected {expected_products}, but got {set(context.products_name)}" # the \ is just to line continuation character, just for better readability
+            
+@then('the response data should be empty') 
+def step_impl(context):
+    logger = getLogger()
+    json_response = context.response.json()
+    
+    assert json_response["data"] == [], f"Expected empty list of products, but got {json_response['data']}"

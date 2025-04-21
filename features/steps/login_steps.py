@@ -34,15 +34,17 @@ def step_impl(context):
     assert context.driver.title == expected_title, "Login wasn't made successfully "
     context.logger.info("Assertion Passed: login was made successfully")
 
-
-@when('I enter invalid username and password in the login form')
-def step_impl(context):
-    email = "fgtt45sdf@gmail.com"
-    password = "s456dfgsfdg"
+    
+@when('I enter email "{email}" and password "{password}" in the login form')
+def step_impl(context,email,password):
+    if email == 'EMPTY':
+        email = ""
+    if password == 'EMPTY':
+        password = ""
     context.login_page.enter_credentials(email, password)
 
 
 @then('I should see an error message saying "Warning: No match for E-Mail Address and/or Password."')
 def step_impl(context):
-    assert "Warning: No match for E-Mail Address and/or Password." in context.login_page.get_login_error()
+    assert "Warning: No match for E-Mail Address and/or Password." in context.login_page.get_login_error(), f"AssertionError: Expected 'Warning: No match for E-Mail Address and/or Password.', but got '{context.login_page.get_login_error()}'"
     context.logger.info("Assertion Passed: Invalid login error message was displayed.")
