@@ -142,7 +142,7 @@ allure open OpenCartDemoSimulation/reports/allure-report
 
 ---
 
-## 📊 Allure Test Report Overview
+## Allure Test Report Overview
 This PDF summarises the test coverage and results from Allure.
 
 [📄 View Report](./docs/Allure_Test_Report_Overview.pdf)
