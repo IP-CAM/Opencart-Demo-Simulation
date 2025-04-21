@@ -142,6 +142,12 @@ allure open OpenCartDemoSimulation/reports/allure-report
 
 ---
 
+## 📊 Allure Test Report Overview
+This PDF summarises the test coverage and results from Allure.
+
+[📄 View Report](./docs/Allure_Test_Report_Overview.pdf)
+
+
 ## Credentials & Config
 
 Sensitive data like DB credentials, API keys, and URLs are managed via:
@@ -179,6 +185,6 @@ I'm a QA Automation Engineer focused on **real-world testing scenarios**, clean 
 
 ## 📧 Contact
 
-Feel free to reach out via [LinkedIn](https://www.linkedin.com/in/caio-aza-434147270) or GitHub if you'd like to discuss this project or QA opportunities.
+Feel free to reach out via [LinkedIn](https://www.linkedin.com/in/caio-aza) or GitHub if you'd like to discuss this project or QA opportunities.
 
 ---
