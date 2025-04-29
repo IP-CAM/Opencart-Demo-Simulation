@@ -83,7 +83,13 @@ OpenCartDemoSimulation/
 ### Run All UI Tests (with Pytest HTML Report)
 
 ```bash
- py.test tests/ --html=../reports/report.html --tb=short
+ py.test tests/ --html=reports/report.html --tb=short
+```
+
+### Run All UI Tests in Parallel (with Pytest HTML Report)
+
+```bash
+ py.test tests/ --html=reports/report.html --tb=short -n auto
 ```
 
 ### Run Only One Specific Test
