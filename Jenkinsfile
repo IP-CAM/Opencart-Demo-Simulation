@@ -2,44 +2,44 @@ pipeline {
     agent any
 
     environment {
-        VENV_PATH = 'venv' // Define virtual environment path
+        PYTHON_ENV = 'venv'
     }
 
     stages {
-        stage('Clone Repository') {
-           steps {
-                git branch: 'main',
-                    url: 'https://github.com/caioaza/OpenCartDemoSimulation'
-            }
-        }
-
         stage('Setup Python Environment') {
             steps {
-                sh 'python -m venv $VENV_PATH'
-                sh 'source $VENV_PATH/bin/activate'
-                sh 'pip install -r requirements.txt'
+                bat '''
+                python -m venv %PYTHON_ENV%
+                call %PYTHON_ENV%\\Scripts\\activate
+                pip install --upgrade pip
+                pip install -r requirements.txt
+                '''
             }
         }
 
         stage('Run Selenium Tests') {
             steps {
-                sh 'behave OpenCartDemoSimulation/features/login.feature -f allure_behave.formatter:AllureFormatter -o reports/allure-results'
+                bat '''
+                call %PYTHON_ENV%\\Scripts\\activate
+                pytest --maxfail=1 --disable-warnings --junitxml=test-results/results.xml
+                '''
             }
         }
 
         stage('Generate Allure Report') {
             steps {
-                allure([
-                    results: [[path: 'reports/allure-results']]
-                ])
+                bat '''
+                call %PYTHON_ENV%\\Scripts\\activate
+                allure generate ./allure-results --clean -o ./allure-report
+                '''
             }
         }
     }
 
     post {
         always {
-            archiveArtifacts artifacts: 'reports/allure-results/**', fingerprint: true
-            junit 'reports/allure-results/*.xml'
+            archiveArtifacts artifacts: '**/results.xml', allowEmptyArchive: true
+            junit 'test-results/results.xml'
         }
     }
 }
