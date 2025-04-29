@@ -21,6 +21,7 @@ pipeline {
             steps {
                 bat '''
                 call %PYTHON_ENV%\\Scripts\\activate
+                set PYTHONPATH=%CD%
                 pytest --maxfail=1 --disable-warnings --junitxml=test-results/results.xml
                 '''
             }
