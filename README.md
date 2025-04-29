@@ -177,6 +177,8 @@ Make sure these are updated before running tests.
 - Assertion messages for clear failures
 - Allure Report
 - Pytest HTML Report
+- Pytest Parallel
+- Jenkins/Git integration script 
 - **Tests cover:**
 - Product search & filtering
 - Add to cart & quantity updates
