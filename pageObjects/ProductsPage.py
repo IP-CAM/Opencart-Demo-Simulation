@@ -16,7 +16,9 @@ class ProductsPage(BaseClass):
     menu_mobile = (By.CSS_SELECTOR, "button.navbar-toggler")
     #product_add_to_cart = (By.XPATH, ".//form//button[1]") #the .// enforces this element is a relative path from the parent element (product)
     product_add_to_cart = (By.CSS_SELECTOR, "div.button > button:first-of-type")
+    product_add_to_comparison = (By.CSS_SELECTOR, "div.button > button:last-of-type")
     cart_button = (By.CSS_SELECTOR, "a[title='Shopping Cart']")
+    product_compare_button = (By.CSS_SELECTOR, "#compare-total")
 
     def get_search_product(self):
         return self.driver.find_element(*ProductsPage.search_product) #the * unpacks the tuple (By.CSS_SELECTOR, "input[placeholder='Search']") in two elements, since find_element expects two elements
@@ -39,6 +41,9 @@ class ProductsPage(BaseClass):
     def click_menu_mobile(self):
         return self.driver.find_element(*ProductsPage.menu_mobile).click()
 
+    def click_product_compare_button(self):
+        return self.driver.find_element(*ProductsPage.product_compare_button).click()
+
     def search_for_product(self, product):
         search_element = self.get_search_product()
         search_element.clear()
@@ -49,6 +54,9 @@ class ProductsPage(BaseClass):
         if self.is_mobile_view():
             self.click_menu_mobile()
         return self.driver.find_element(*ProductsPage.category_phones).click()
+
+    def click_product_add_to_comparison(self,product):
+        self.safe_click(product.find_element(*ProductsPage.product_add_to_comparison))
 
     def click_product_add_to_cart(self, product):
         from selenium.webdriver.support.ui import WebDriverWait
