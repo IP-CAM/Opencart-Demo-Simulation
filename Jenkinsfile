@@ -8,8 +8,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
            steps {
-                git branch: 'main', 
-                    url: 'https://github.com/caioaza/Testing_OpenCart_Project'
+                git branch: 'main'
             }
         }
 
