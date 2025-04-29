@@ -4,5 +4,6 @@ requests==2.31.0
 allure-behave==2.13.0
 pytest==8.1.1
 pytest-html==4.1.1
+pytest-xdist==3.6.1
 python-dotenv==1.0.1
 mysql-connector-python==8.3.0
