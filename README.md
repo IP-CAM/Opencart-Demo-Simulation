@@ -83,7 +83,7 @@ OpenCartDemoSimulation/
 ### Run All UI Tests (with Pytest HTML Report)
 
 ```bash
- py.test tests/ --html=../reports/report.html --tb=short
+ py.test tests/ --html=reports/report.html --tb=short
 ```
 
 ### Run Only One Specific Test
