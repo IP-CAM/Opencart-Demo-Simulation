@@ -17,6 +17,7 @@ This project simulates how a QA Automation Engineer would work in an Agile team,
 - ✅ Page Object Model (POM) for maintainability
 - ✅ Integration with a MySQL database for dynamic test data
 - ✅ Logging, assertions, and clean structure following SRP & DRY principles
+- ✅ GitHub repository integrated with Jenkins for continuous integration and automated testing.
 
 ---
 
