@@ -386,3 +386,43 @@ assert <selenium.webdriver.remote.webelement.WebElement (session="aa69c5d8e8434c
 2025-04-21 14:00:47,182 : INFO : before_scenario :Assertion Passed: Invalid login error message was displayed.
 2025-04-21 14:00:50,171 : INFO : step_impl :Collected product names: ['Sony VAIO']
 2025-04-21 14:00:50,846 : INFO : step_impl :Collected product names: ['Sony VAIO', 'Nikon D300']
+2025-04-23 18:44:25,294 : INFO : test_1_verify_items :Assertion Passed: the products were correctly added to the comparison list
+2025-04-29 15:20:38,914 : INFO : test_2_enter_invalid_product_name :Starting invalid product search test with product: xyz5441
+2025-04-29 15:20:38,934 : INFO : test_1_enter_valid_product_name :Starting product search test with product: ipod
+2025-04-29 15:20:41,459 : INFO : test_2_enter_invalid_product_name :Assertion Passed: error message %s was displayed.
+2025-04-29 15:20:42,257 : INFO : test_1_enter_valid_product_name :Displayed products: [{'name': 'iPod Classic', 'price': '$122.00'}, {'name': 'iPod Nano', 'price': '$122.00'}, {'name': 'iPod Shuffle', 'price': '$122.00'}, {'name': 'iPod Touch', 'price': '$122.00'}]
+2025-04-29 15:20:42,257 : INFO : test_1_enter_valid_product_name :Assertion Passed: the displayed products match with the expected products.
+2025-04-29 15:20:45,457 : INFO : test_3_empty_credentials :Logging in with empty credentials.
+2025-04-29 15:20:45,580 : INFO : test_3_empty_credentials :Assertion Passed: Invalid login error message was displayed.
+2025-04-29 15:20:45,959 : INFO : test_1_verify_items :Assertion Passed: the products were correctly added to the comparison list
+2025-04-29 15:20:46,045 : INFO : test_2_enter_invalid_credentials :Logging in with invalid credentials. E-mail: fgsd67456f@gmail.com / Password: sd57fgsfdg
+2025-04-29 15:20:46,178 : INFO : test_2_enter_invalid_credentials :Assertion Passed: Invalid login error message was displayed.
+2025-04-29 15:20:46,347 : INFO : test_1_enter_valid_credentials :Logging in with valid credentials. E-mail: caioaza@gmail.com / Password: 123456
+2025-04-29 15:20:46,366 : INFO : test_1_enter_valid_credentials :Assertion Passed: login was made successfully
+2025-04-29 15:20:51,986 : INFO : test_1_verify_items_data :Assertion Passed: the products added to the cart match with the products in the cart.
+2025-04-29 15:21:00,146 : INFO : test_3_verify_category_menu :Displayed products: [{'name': 'HTC Touch HD', 'price': '$122.00'}, {'name': 'iPhone', 'price': '$123.20'}, {'name': 'Palm Treo Pro', 'price': '$337.99'}]
+2025-04-29 15:21:00,147 : INFO : test_3_verify_category_menu :Assertion Passed: the displayed products match with the expected products.
+2025-04-29 15:21:02,067 : INFO : test_4_remove_product :Assertion Passed: Products are being correctly removed.
+2025-04-29 15:21:02,446 : INFO : test_3_checkout_empty_cart_button :Assertion Passed: Checkout button is not present when cart is empty
+2025-04-29 15:25:19,097 : INFO : test_1_enter_valid_product_name :Starting product search test with product: ipod
+2025-04-29 15:25:19,465 : INFO : test_2_enter_invalid_product_name :Starting invalid product search test with product: xyz5441
+2025-04-29 15:25:22,155 : INFO : test_1_enter_valid_product_name :Displayed products: [{'name': 'iPod Classic', 'price': '$122.00'}, {'name': 'iPod Nano', 'price': '$122.00'}, {'name': 'iPod Shuffle', 'price': '$122.00'}, {'name': 'iPod Touch', 'price': '$122.00'}]
+2025-04-29 15:25:22,155 : INFO : test_1_enter_valid_product_name :Assertion Passed: the displayed products match with the expected products.
+2025-04-29 15:25:22,548 : INFO : test_2_enter_invalid_product_name :Assertion Passed: error message %s was displayed.
+2025-04-29 15:25:24,833 : INFO : test_3_empty_credentials :Logging in with empty credentials.
+2025-04-29 15:25:24,960 : ERROR : test_3_empty_credentials :Assertion Failed! Invalid login error message wasn't displayed.
+2025-04-29 15:25:25,592 : INFO : test_2_enter_invalid_credentials :Logging in with invalid credentials. E-mail: fgsd67456f@gmail.com / Password: sd57fgsfdg
+2025-04-29 15:25:25,699 : ERROR : test_2_enter_invalid_credentials :Assertion Failed! Invalid login error message wasn't displayed.
+2025-04-29 15:25:26,850 : INFO : test_1_verify_items :Assertion Passed: the products were correctly added to the comparison list
+2025-04-29 15:25:28,835 : INFO : test_1_enter_valid_credentials :Logging in with valid credentials. E-mail: caioaza@gmail.com / Password: 123456
+2025-04-29 15:25:28,920 : INFO : test_1_enter_valid_credentials :Assertion Passed: login was made successfully
+2025-04-29 15:25:29,068 : INFO : test_1_verify_items_data :Assertion Passed: the products added to the cart match with the products in the cart.
+2025-04-29 15:25:36,925 : INFO : test_3_verify_category_menu :Displayed products: [{'name': 'HTC Touch HD', 'price': '$122.00'}, {'name': 'iPhone', 'price': '$123.20'}, {'name': 'Palm Treo Pro', 'price': '$337.99'}]
+2025-04-29 15:25:36,926 : INFO : test_3_verify_category_menu :Assertion Passed: the displayed products match with the expected products.
+2025-04-29 15:25:39,637 : INFO : test_4_remove_product :Assertion Passed: Products are being correctly removed.
+2025-04-29 15:25:39,723 : INFO : test_3_checkout_empty_cart_button :Assertion Passed: Checkout button is not present when cart is empty
+2025-05-14 12:43:30,587 : INFO : test_1_verify_items :Assertion Passed: the products were correctly added to the comparison list
+2025-05-14 14:19:39,687 : INFO : test_1_verify_items :Assertion Passed: the products were correctly added to the comparison list
+2025-05-14 14:21:14,416 : INFO : test_1_verify_items :Assertion Passed: the products were correctly added to the comparison list
+2025-05-14 14:22:22,052 : INFO : test_1_verify_items :Assertion Passed: the products were correctly added to the comparison list
+2025-05-14 14:22:29,670 : INFO : test_2_delete_items :Assertion Passed: the product was correctly removed from the comparison list
