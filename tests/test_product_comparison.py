@@ -1,16 +1,9 @@
-import time
-
-import pytest
-
 from OpenCartDemoSimulation.pageObjects.ProductsPage import ProductsPage
 from OpenCartDemoSimulation.pageObjects.ProductComparison import ProductComparison
 from OpenCartDemoSimulation.utilities.BaseClass import BaseClass
 
 
 class TestProductComparison(BaseClass):
-
-
-
 
     def test_1_verify_items(self):
         #TC1 - Verify if the items in comparison list are the correct ones
