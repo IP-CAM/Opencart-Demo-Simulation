@@ -14,26 +14,28 @@ pipeline {
             }
         }
 
+        stage('Rebuild folder structure for imports') {
+            steps {
+                bat '''
+                mkdir OpenCartDemoSimulation
+                xcopy /E /I /Y pageObjects OpenCartDemoSimulation\\pageObjects
+                xcopy /E /I /Y utilities OpenCartDemoSimulation\\utilities
+                xcopy /E /I /Y tests OpenCartDemoSimulation\\tests
+                copy requirements.txt OpenCartDemoSimulation\\
+                copy __init__.py OpenCartDemoSimulation\\
+                '''
+            }
+        }
+
         stage('Setup Python Environment') {
             steps {
                 dir('OpenCartDemoSimulation') {
                     bat '''
                     python -m venv venv
                     call venv\\Scripts\\activate
-                    pip install --upgrade pip
                     pip install -r requirements.txt
                     '''
                 }
-            }
-        }
-
-        stage('Debug PYTHONPATH') {
-            steps {
-                echo "Current PYTHONPATH: $PYTHONPATH"
-                bat 'echo Listing contents of workspace:'
-                bat 'dir'
-                bat 'echo Listing inside OpenCartDemoSimulation if it exists:'
-                bat 'if exist OpenCartDemoSimulation (dir OpenCartDemoSimulation) else (echo Directory not found)'
             }
         }
 
