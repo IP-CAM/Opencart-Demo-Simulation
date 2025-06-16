@@ -5,6 +5,13 @@ pipeline {
         PYTHONPATH = "${env.WORKSPACE}"
     }
 
+    stage('Debug PYTHONPATH') {
+        steps {
+            sh 'echo $PYTHONPATH'
+            sh 'ls -l $PYTHONPATH'
+        }
+    }
+
     stages {
         stage('Setup Python Environment') {
             steps {
