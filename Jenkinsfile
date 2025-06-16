@@ -5,13 +5,6 @@ pipeline {
         PYTHONPATH = "${env.WORKSPACE}"
     }
 
-    stage('Debug PYTHONPATH') {
-        steps {
-            sh 'echo $PYTHONPATH'
-            sh 'ls -l $PYTHONPATH'
-        }
-    }
-
     stages {
         stage('Setup Python Environment') {
             steps {
@@ -21,6 +14,16 @@ pipeline {
                 pip install --upgrade pip
                 pip install -r requirements.txt
                 '''
+            }
+        }
+
+        stage('Debug PYTHONPATH') {
+            steps {
+                echo "Current PYTHONPATH: $PYTHONPATH"
+                sh 'echo "Listing contents of workspace:"'
+                sh 'ls -la'
+                sh 'echo "Listing inside OpenCartDemoSimulation if exists:"'
+                sh 'ls -la OpenCartDemoSimulation || echo "Directory not found"'
             }
         }
 
