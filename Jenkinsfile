@@ -20,10 +20,10 @@ pipeline {
         stage('Debug PYTHONPATH') {
             steps {
                 echo "Current PYTHONPATH: $PYTHONPATH"
-                bat 'echo "Listing contents of workspace:"'
-                bat 'ls -la'
-                bat 'echo "Listing inside OpenCartDemoSimulation if exists:"'
-                bat 'ls -la OpenCartDemoSimulation || echo "Directory not found"'
+                bat 'echo Listing contents of workspace:'
+                bat 'dir'
+                bat 'echo Listing inside OpenCartDemoSimulation if it exists:'
+                bat 'if exist OpenCartDemoSimulation (dir OpenCartDemoSimulation) else (echo Directory not found)'
             }
         }
 
