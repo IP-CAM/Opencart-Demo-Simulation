@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        PYTHON_ENV = 'venv'
+        PYTHONPATH = "${env.WORKSPACE}"
     }
 
     stages {
