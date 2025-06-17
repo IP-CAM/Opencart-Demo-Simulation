@@ -44,9 +44,8 @@ pipeline {
                 bat '''
                 set ROOT_DIR=%CD%
                 call OpenCartDemoSimulation\\venv\\Scripts\\activate
-                set PYTHONPATH=%ROOT_DIR%\\OpenCartDemoSimulation
-                cd OpenCartDemoSimulation
-                pytest tests --maxfail=1 --disable-warnings --junitxml=../test-results/results.xml --html=reports\\report.html --self-contained-html
+                set PYTHONPATH=%ROOT_DIR%
+                pytest OpenCartDemoSimulation\\tests --maxfail=1 --disable-warnings --junitxml=OpenCartDemoSimulation\\..\\test-results\\results.xml --html=OpenCartDemoSimulation\\reports\\report.html --self-contained-html
                 '''
             }
         }
