@@ -2,51 +2,70 @@ pipeline {
     agent any
 
     environment {
-        PYTHONPATH = "${env.WORKSPACE}"
-    }
-
-    stage('Debug PYTHONPATH') {
-        steps {
-            bat 'echo $PYTHONPATH'
-            bat 'ls -l $PYTHONPATH'
-        }
+        PYTHON_ENV = "venv"
+        PYTHONPATH = "${env.WORKSPACE}\\OpenCartDemoSimulation"
     }
 
     stages {
-        stage('Setup Python Environment') {
+
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/caioaza/OpenCartDemoSimulation.git'
+            }
+        }
+
+        stage('Rebuild folder structure for imports') {
             steps {
                 bat '''
-                python -m venv %PYTHON_ENV%
-                call %PYTHON_ENV%\\Scripts\\activate
-                pip install --upgrade pip
-                pip install -r requirements.txt
+                mkdir OpenCartDemoSimulation
+                xcopy /E /I /Y pageObjects OpenCartDemoSimulation\\pageObjects
+                xcopy /E /I /Y utilities OpenCartDemoSimulation\\utilities
+                xcopy /E /I /Y tests OpenCartDemoSimulation\\tests
+                copy requirements.txt OpenCartDemoSimulation\\
+                copy __init__.py OpenCartDemoSimulation\\
                 '''
+            }
+        }
+
+        stage('Setup Python Environment') {
+            steps {
+                dir('OpenCartDemoSimulation') {
+                    bat '''
+                    python -m venv venv
+                    call venv\\Scripts\\activate
+                    pip install -r requirements.txt
+                    '''
+                }
             }
         }
 
         stage('Run Selenium Tests') {
             steps {
-                bat '''
-                call %PYTHON_ENV%\\Scripts\\activate
-                set PYTHONPATH=%CD%
-                pytest --maxfail=1 --disable-warnings --junitxml=test-results/results.xml
-                '''
+                dir('OpenCartDemoSimulation') {
+                    bat '''
+                    call venv\\Scripts\\activate
+                    set PYTHONPATH=%CD%
+                    pytest --maxfail=1 --disable-warnings --junitxml=../test-results/results.xml --html=reports\\report.html --self-contained-html
+                    '''
+                }
             }
         }
 
         stage('Generate Allure Report') {
             steps {
-                bat '''
-                call %PYTHON_ENV%\\Scripts\\activate
-                allure generate ./allure-results --clean -o ./allure-report
-                '''
+                dir('OpenCartDemoSimulation') {
+                    bat '''
+                    call venv\\Scripts\\activate
+                    allure generate ./allure-results --clean -o ./allure-report
+                    '''
+                }
             }
         }
     }
 
-
     post {
         always {
+            archiveArtifacts artifacts: '**/report.html', allowEmptyArchive: true
             archiveArtifacts artifacts: '**/results.xml', allowEmptyArchive: true
             junit 'test-results/results.xml'
         }

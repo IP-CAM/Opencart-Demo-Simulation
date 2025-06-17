@@ -21,7 +21,7 @@ This project simulates how a QA Automation Engineer would work in an Agile team,
 
 ---
 
-## Technologies Used
+## Technologies Used 
 
 - Python
 - Selenium WebDriver (UI Automation)
