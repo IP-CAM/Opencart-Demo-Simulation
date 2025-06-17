@@ -41,13 +41,11 @@ pipeline {
 
         stage('Run Selenium Tests') {
             steps {
-                dir('OpenCartDemoSimulation') {
-                    bat '''
-                    call venv\\Scripts\\activate
-                    set PYTHONPATH=%CD%
-                    pytest --maxfail=1 --disable-warnings --junitxml=../test-results/results.xml --html=reports\\report.html --self-contained-html
-                    '''
-                }
+                bat '''
+                call OpenCartDemoSimulation\\venv\\Scripts\\activate
+                set PYTHONPATH=%CD%\\OpenCartDemoSimulation
+                pytest OpenCartDemoSimulation\\tests --maxfail=1 --disable-warnings --junitxml=test-results/results.xml --html=OpenCartDemoSimulation\\reports\\report.html --self-contained-html
+                '''
             }
         }
 
