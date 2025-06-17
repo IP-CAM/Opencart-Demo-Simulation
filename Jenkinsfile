@@ -7,8 +7,8 @@ pipeline {
 
     stage('Debug PYTHONPATH') {
         steps {
-            sh 'echo $PYTHONPATH'
-            sh 'ls -l $PYTHONPATH'
+            bat 'echo $PYTHONPATH'
+            bat 'ls -l $PYTHONPATH'
         }
     }
 
