@@ -179,6 +179,7 @@ Make sure these are updated before running tests.
 - Allure Report
 - Pytest HTML Report
 - Pytest Parallel
+- Dynamic test data generation using Python Faker
 - Jenkins/Git integration script 
 - **Tests cover:**
 - Product search & filtering
