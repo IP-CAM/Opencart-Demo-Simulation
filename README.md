@@ -10,14 +10,14 @@ It is not intended to be a full test suite of the entire OpenCart application, b
 
 This project simulates how a QA Automation Engineer would work in an Agile team, covering:
 
-- ✅ Manual test planning and strategy
-- ✅ Selenium-based UI automation
-- ✅ REST API testing with `Python requests`
-- ✅ Behavior-Driven Development (BDD) with `Behave`
-- ✅ Page Object Model (POM) for maintainability
-- ✅ Integration with a MySQL database for dynamic test data
-- ✅ Logging, assertions, and clean structure following SRP & DRY principles
-- ✅ GitHub repository integrated with Jenkins for continuous integration and automated testing.
+- Manual test planning and strategy
+- Selenium-based UI automation
+- REST API testing with `Python requests`
+- Behavior-Driven Development (BDD) with `Behave`
+- Page Object Model (POM) for maintainability
+- Integration with a MySQL database for dynamic test data
+- Logging, assertions, and clean structure following SRP & DRY principles
+- GitHub repository integrated with Jenkins for continuous integration and automated testing.
 
 ---
 
