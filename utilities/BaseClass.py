@@ -32,9 +32,9 @@ class BaseClass:
     def convert_price_to_float(self,price_str):
         return float(price_str.replace(",", "").replace("$", "").strip())
 
-    def verify_link_presence(self, text):
+    def wait_for_element(self, locator):
         wait = WebDriverWait(self.driver, 10)
-        element = wait.until(expected_conditions.presence_of_element_located((By.LINK_TEXT, text)))
+        return wait.until(expected_conditions.presence_of_element_located(locator))
 
     # def selectOptionByText(self, locator, text):
     #     dropdown = Select(locator)

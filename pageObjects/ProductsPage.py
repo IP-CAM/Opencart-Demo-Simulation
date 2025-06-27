@@ -1,3 +1,5 @@
+import time
+
 from selenium.webdriver.common.by import By
 from OpenCartDemoSimulation.utilities.BaseClass import BaseClass
 
@@ -17,6 +19,7 @@ class ProductsPage(BaseClass):
     #product_add_to_cart = (By.XPATH, ".//form//button[1]") #the .// enforces this element is a relative path from the parent element (product)
     product_add_to_cart = (By.CSS_SELECTOR, "div.button > button:first-of-type")
     product_add_to_comparison = (By.CSS_SELECTOR, "div.button > button:last-of-type")
+    product_add_to_wishlist = (By.CSS_SELECTOR, "div.button > button:nth-of-type(2)")
     cart_button = (By.CSS_SELECTOR, "a[title='Shopping Cart']")
     product_compare_button = (By.CSS_SELECTOR, "#compare-total")
 
@@ -53,10 +56,15 @@ class ProductsPage(BaseClass):
     def click_category_phone(self):
         if self.is_mobile_view():
             self.click_menu_mobile()
+        #Small sleep required to allow the menu to open fully before clicking category
+        time.sleep(1)
         return self.driver.find_element(*ProductsPage.category_phones).click()
 
     def click_product_add_to_comparison(self,product):
         self.safe_click(product.find_element(*ProductsPage.product_add_to_comparison))
+
+    def click_product_add_to_wishlist(self,product):
+        self.safe_click(product.find_element(*ProductsPage.product_add_to_wishlist))
 
     def click_product_add_to_cart(self, product):
         from selenium.webdriver.support.ui import WebDriverWait

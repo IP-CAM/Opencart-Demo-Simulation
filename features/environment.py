@@ -1,6 +1,8 @@
 import sys
 import os
 
+from OpenCartDemoSimulation.pageObjects.ProductsPage import ProductsPage
+
 # Make sure we always add the actual project root to sys.path
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 if project_root not in sys.path:
@@ -8,7 +10,7 @@ if project_root not in sys.path:
 
 from selenium import webdriver
 from OpenCartDemoSimulation.pageObjects.LoginPage import LoginPage
-import time
+from OpenCartDemoSimulation.pageObjects.Wishlist import Wishlist
 from OpenCartDemoSimulation.utilities.BaseClass import BaseClass
 
 def before_all(context):
@@ -25,6 +27,7 @@ def before_scenario(context, scenario):
             context.driver = webdriver.Chrome(options=options)
             context.driver.get("http://localhost/opencart/")
             context.login_page = LoginPage(context.driver)
+            context.wishlist = Wishlist(context.driver)
             context.base_class = BaseClass()
             context.logger = context.base_class.getLogger()
 
