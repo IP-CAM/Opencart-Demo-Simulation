@@ -15,7 +15,7 @@ This project simulates how a QA Automation Engineer would work in an Agile team,
 - REST API testing with `Python requests`
 - Behavior-Driven Development (BDD) with `Behave`
 - Page Object Model (POM) for maintainability
-- Integration with a MySQL database for dynamic test data
+- Integration with MySQL database for dynamic test data and API validation
 - Logging, assertions, and clean structure following SRP & DRY principles
 - GitHub repository integrated with Jenkins for continuous integration and automated testing.
 
@@ -187,6 +187,7 @@ Make sure these are updated before running tests.
 - Price validation
 - Login (positive/negative cases)
 - API payload building from DB
+- API validation with SQL queries
 - BDD integration
 
 ---
