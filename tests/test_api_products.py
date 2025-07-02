@@ -4,7 +4,7 @@ from OpenCartDemoSimulation.utilities.configurations import getConfig, get_heade
 from OpenCartDemoSimulation.utilities.resources import ApiResources
 
 def test_name_price():
-    # sends a get request to the API requesting all the products from category 24 so it can compare the name and price with the ones stored in the DB to see if API is bringing correct data
+    ## sends a get request to the API requesting all the products from category 24 so it can compare the name and price with the ones stored in the DB to see if API is bringing correct data
     category = "24"
     url = getConfig()['API']['endpoint']+ApiResources.products_category+category
     # print(url)
