@@ -1,6 +1,7 @@
 import sys
 import os
 
+from OpenCartDemoSimulation.pageObjects.CartPage import CartPage
 from OpenCartDemoSimulation.pageObjects.ProductsPage import ProductsPage
 
 # Make sure we always add the actual project root to sys.path
@@ -11,6 +12,8 @@ if project_root not in sys.path:
 from selenium import webdriver
 from OpenCartDemoSimulation.pageObjects.LoginPage import LoginPage
 from OpenCartDemoSimulation.pageObjects.Wishlist import Wishlist
+from OpenCartDemoSimulation.pageObjects.ProductsPage import ProductsPage
+from OpenCartDemoSimulation.pageObjects.CartPage import CartPage
 from OpenCartDemoSimulation.utilities.BaseClass import BaseClass
 
 def before_all(context):
@@ -28,6 +31,8 @@ def before_scenario(context, scenario):
             context.driver.get("http://localhost/opencart/")
             context.login_page = LoginPage(context.driver)
             context.wishlist = Wishlist(context.driver)
+            context.products_page = ProductsPage(context.driver)
+            context.cart_page = CartPage(context.driver)
             context.base_class = BaseClass()
             context.logger = context.base_class.getLogger()
 

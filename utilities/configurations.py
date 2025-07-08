@@ -42,6 +42,11 @@ connect_config = {
     'host' : getConfig()['SQL']['host'],
 }
 
+user_opencart_credentials = {
+    'email': getConfig()['OPENCART_LOGIN']['email'],
+    'password': getConfig()['OPENCART_LOGIN']['password'],
+}
+
 def getConnection():
     try: #we use try because if connection fails we need to know the error
         conn = mysql.connector.connect(**connect_config) #the ** tell it's nothing but a dicitonary
