@@ -56,6 +56,12 @@ class CartPage(BaseClass):
         quantity_input.send_keys(str(new_quantity))
         self.click_update_quantity_button(product_row)
 
+    def contains_product(self, name):
+        for product in self.get_products():
+            if self.get_product_title(product) == name:
+                return True
+        return False
+
     def remove_products_from_the_cart(self):
         get_page_title = self.driver.title
         if get_page_title != "Shopping Cart":

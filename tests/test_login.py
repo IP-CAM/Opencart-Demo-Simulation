@@ -6,6 +6,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 from OpenCartDemoSimulation.pageObjects.LoginPage import LoginPage
 from OpenCartDemoSimulation.utilities.BaseClass import BaseClass
+from OpenCartDemoSimulation.utilities.configurations import user_opencart_credentials
 from OpenCartDemoSimulation.utilities.mock_data import generate_user
 
 
@@ -27,8 +28,8 @@ class TestLogin(BaseClass):
     def test_1_enter_valid_credentials(self):
         #TC 1 Test for valid username and password
         logger = self.getLogger()
-        email = "caioaza@gmail.com"
-        password = "123456"
+        email = user_opencart_credentials["email"]
+        password = user_opencart_credentials["password"]
         #time.sleep(5) #this sleep time helps to validate the verify human blockage
         try:
             self.login(email, password)

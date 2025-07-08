@@ -3,6 +3,9 @@ import time
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 
+from OpenCartDemoSimulation.utilities.configurations import user_opencart_credentials
+
+
 @given('I open the OpenCart login page')
 def step_impl(context):
     #login_page = LoginPage(context.driver)
@@ -15,8 +18,8 @@ def step_impl(context):
 
 @when('I enter valid username and password in the login form')
 def step_impl(context):
-    email = "caioaza@gmail.com"
-    password = "123456"    
+    email = user_opencart_credentials["email"]
+    password = user_opencart_credentials["password"]
     context.login_page.enter_credentials(email, password)
 
 
